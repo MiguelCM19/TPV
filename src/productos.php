@@ -9,8 +9,8 @@
 
 .fotos{
 
-height : 300px;
-width : 300px
+height : 200px;
+width : 200px
 
 }
 
@@ -33,7 +33,7 @@ include_once ('conexion.php');
 $query = "select 
 * 
 from
-categoria";
+productos where categoria = 1";
 
 
 $resultado = mysqli_query($conexion, $query ) or die
@@ -50,7 +50,7 @@ while($columna = mysqli_fetch_array($resultado)){
         <a href="#">
             <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">'.$columna['nombre'].'</h5>
         </a>
-        <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Categoria</p>
+        <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Producto</p>
   
         </a>
     </div>

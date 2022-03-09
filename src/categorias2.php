@@ -9,8 +9,8 @@
 
 .fotos{
 
-height : 300px;
-width : 300px
+height : 350px;
+width : 350px
 
 }
 
@@ -41,20 +41,14 @@ $resultado = mysqli_query($conexion, $query ) or die
 
 
 while($columna = mysqli_fetch_array($resultado)){
-  
-  echo   '<div class=" gap-3 max-w-sm bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700 ">
-    <a href="#">
-        <img class="fotos" src="'.$columna['foto'].'" />
-    </a>
-    <div class="p-5">
-        <a href="#">
-            <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">'.$columna['nombre'].'</h5>
-        </a>
-        <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Categoria</p>
-  
-        </a>
-    </div>
-</div>';
+
+
+echo '<div class = "container">
+        <div class = "grid grid-cols-3">
+        <div> <img class="fotos" src="'.$columna['foto'].'" /></div>
+        <div><h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">'.$columna['nombre'].'</h5></div>
+        <div>Categoria</div>
+     </div>';
 
 };
 
