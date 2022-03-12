@@ -37,10 +37,10 @@ while($columna = mysqli_fetch_array($resultado2)){
                             </th>
                             <th scope="col" class="py-3 px-6 text-xs font-medium tracking-wider text-left text-gray-700 uppercase dark:text-gray-400">
                                 Precio
-                                <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 ">'.$columna['precio'].' </h5>
+                                <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 ">'.$columna['precio'].'€</h5>
                             </th>
                             <th scope="col" class="relative py-3 px-6>';
-                            echo '<button type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                            echo '<button type="button" class="text-white  hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2 bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
                             <a href =" modificar.php?id='.$_GET["id"] .'">Modificar producto</a></button>';
 
                             echo '<button type="button" class="text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900">
