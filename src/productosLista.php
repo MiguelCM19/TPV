@@ -24,7 +24,7 @@ $resultado = mysqli_query($conexion, $consulta ) or die
         echo'<div class="mt-5 mb-5 px-12 max-w-sm justify-self-center bg-slate-500 ">';
         echo '<a href=detallesproducto.php?id='.$columna["id_producto"]  .' class="block p-6  rounded-lg border border-gray-200 shadow-md hover:bg-gray-100 ">';
         
-        echo     ' <img class="w-80" src='.$columna['foto'].'>';
+        echo     ' <img class="w-80" src='.$columna['foto_producto'].'>';
         echo      '<h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 ">'.$columna['nombre'].'</h5>';
         echo  '</a>';
         echo  '</div>';
