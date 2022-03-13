@@ -1,4 +1,7 @@
 <?php
+
+
+
 $servername = "localhost";
 $database = "sexshop";
 $username = "root";

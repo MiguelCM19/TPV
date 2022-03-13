@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TPV TFT</title>
+    <title>TPV Sex Shop Miguel</title>
     <link rel="icon" href="./img/tft.png">
     <link rel="stylesheet" href="https://unpkg.com/flowbite@1.3.4/dist/flowbite.min.css" />
     <link rel="stylesheet" href="main.css">
@@ -19,13 +19,46 @@
 
 <body>
     <!-- menu de la pagina  -->
+    <?php
 
+
+
+include_once("conexion.php");
+session_start();
+
+if (!isset($_SESSION['user'])) {
+
+
+
+  $nombre = $_POST['nombre'];
+
+  $pass = $_POST['pass'];
+
+  $_SESSION["user"] = $_POST['nombre'];
+  $_SESSION["pass"] = $_POST['pass'];
+
+  $query = "SELECT * FROM empleado WHERE username='$nombre' and pass='$pass'";
+
+  $resultado = mysqli_query($conexion, $query) or die("Algo ha ido mal en la consulta a la base de datos ". mysqli_error($conexion));
+
+    if(mysqli_num_rows($resultado) > 0){
+
+  }else{
+    session_destroy();
+    header('Location: '."login.php");
+    exit;
+  }
+}
+
+
+
+?>
 
     <nav class="bg-pink-600 border-gray-200 px-2 sm:px-4 py-2.5 rounded dark:bg-gray-800">
 <div class="container flex flex-wrap justify-between items-center mx-auto">
 <a href="#" class="flex items-center">
 <img src="IMG/logo.jpg" class="mr-3 h-10 sm:h-10" alt="Flowbite Logo">
-<span class="self-center text-xl font-semibold whitespace-nowrap dark:text-white">Sex Shop Miguel</span>
+<span class="self-center text-xl font-semibold whitespace-nowrap dark:text-white">¡¡¡SUCK IT!!!</span>
 </a>
 <button data-collapse-toggle="mobile-menu" type="button" class="inline-flex items-center p-2 ml-3 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="mobile-menu-2" aria-expanded="false">
 <span class="sr-only">Menu principal</span>
@@ -44,11 +77,24 @@
 <li>
 <a href="#" class="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"><a href ="productosLista.php">Productos</a></a>
 </li>
-<li>
-<a href="#" class="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"><a href ="compra.php">Compras</a></a>
-</li>
+
 <li>
 <a href="#" class="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"><a href ="cliente.php">Clientes mas destacados</a></a>
+</li>
+<li>
+<a href="#" class="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"><a href ="cliente.php"></a></a>
+<?php
+
+
+
+echo $_SESSION["user"];
+
+?>
+</li>
+
+<li>
+<a href="cerrarsesion.php" class="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Cerrar sesión</a>
+
 </li>
 <li>
 

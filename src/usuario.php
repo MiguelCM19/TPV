@@ -1,6 +1,5 @@
 <?php 
 
-session_start();
 
 $_SESSION["usuario"] = $_POST["nombre"];
 $_SESSION["pass"] = $_POST["pass"];

@@ -1,4 +1,6 @@
 <?php
+
+
     include_once('header.php');
     include_once('conexion.php');   
 
@@ -33,7 +35,7 @@
 
             </select>
 
-            <button type="submit" name="send"  href="productos.php" class="text-black e font-medium rounded-lg text-sm w-2/4 sm:w-auto px-5 mt-10 border text-center ">Enviar</button>
+            <button type="submit" name="send"  href="categorias.php" class="text-black e font-medium rounded-lg text-sm w-2/4 sm:w-auto px-5 mt-10 border text-center ">Enviar</button>
 
         </form>
     </div>

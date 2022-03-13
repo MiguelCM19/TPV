@@ -1,40 +1,54 @@
-<?php
- include_once ('header.php');
- include_once ('conexion.php');
- 
+<?php 
 
 
- $query = "SELECT 
-				* 
-			FROM 
-      clientes";
-
-
-	$resultado = mysqli_query($conexion, $query ) or die
-	("Algo ha ido mal en la consulta a la base de datos ". mysqli_error($conexion));
+include_once("header.php");
+include_once("conexion.php");
 
 
 
-echo ("<div class='grid'>");  //    
-    echo ("<div class='order-last pl-2 xl:pl-48 lg:pl-32 md:pl-20 sm:pl-0 pt-20 w-10/12  grid gap-2 grid-cols-2 xl:grid-cols-6 lg:grid-cols-4 md:grid-cols-3  sm:grid-cols-2 grid-rows-1'>");
+$query2 ="select * from clientes";
 
-        while($rows = mysqli_fetch_array($resultado)){	
-        
-	    echo "<div class='justify-self-end mb-4 hover:text-white'>
-	    		<a href='cliente.php?id=".$rows['id_cliente']."'>
-	    	</a>
-                <p class='my-2 hover:text-white text-2xl text-center'>".$rows['nombre']."</p>
-                <p class='my-2 hover:text-white text-2xl text-center'>".$rows['apellido']."</p>
-                <p class='my-2 hover:text-white text-2xl text-center'>".$rows['telefono']."</p>
-                <p class='my-2 hover:text-white text-2xl text-center'>".$rows['direccion']."</p>
-            </div>";	
-	    }
+$resultado2 = mysqli_query($conexion, $query2 ) or die
+("Algo ha ido mal en la consulta a la base de datos ". mysqli_error($conexion));
 
-	echo("</div>");	
-	
+while($columna = mysqli_fetch_array($resultado2)){	
+    
+     
+          
+     echo '<div class="flex flex-col">';
+    echo '<div class="overflow-x-auto sm:-mx-6 lg:-mx-8">';
+      echo ' <div class="inline-block py-2 min-w-full sm:px-6 lg:px-8">';
+          echo  '<div class="overflow-hidden shadow-md sm:rounded-lg">';
+                echo '<table class="min-w-full">';
+                    echo '<thead class="bg-gray-50 dark:bg-gray-700">';
+                       echo  '<tr>';
+                            
+                            echo '<th scope="col" class="py-3 px-6 text-xs font-medium tracking-wider text-left text-gray-700 uppercase dark:text-gray-400">';
+                               echo ' Nombre';
+                                echo '<h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 ">'.$columna['nombre'].' </h5>';
+                           echo ' </th>';
+                           echo ' <th scope="col" class="py-3 px-6 text-xs font-medium tracking-wider text-left text-gray-700 uppercase dark:text-gray-400">';
+                             echo '   Apellido';
+                            echo '  <h5 class="mb-2 text-base font-bold tracking-tight text-gray-900 ">'.$columna['apellido'].' </h5>';
+                            echo '</th>';
+                           echo ' <th scope="col" class="py-3 px-6 text-xs font-medium tracking-wider text-left text-gray-700 uppercase dark:text-gray-400">';
+                               echo ' Telefono';
+                               echo ' <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 ">'.$columna['telefono'].' </h5>';
+                          echo ' </th>';
+                            echo '<th scope="col" class="py-3 px-6 text-xs font-medium tracking-wider text-left text-gray-700 uppercase dark:text-gray-400">';
+                                echo 'Direccion';
+                               echo ' <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 ">'.$columna['direccion'].'</h5>';
+                           echo '</th>';
+                           
+                       echo '</tr>';
+                    echo '</thead>';
 
-    include_once ('footer.php');
-        
+
+    }
+
+include_once("footer.php");
+
 ?>
+
 
 
