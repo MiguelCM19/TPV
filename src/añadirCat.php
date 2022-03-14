@@ -18,7 +18,7 @@ include_once('conexion.php');
 <input name="userfile" type="file"> 
 
 <button  type="submit" name="enviar">Enviar</button>
-<button> <a href="añadir.php" style="color:#FF0000;" >  Volver </button> </a>    </div>
+<button> <a href="añadir.php" style="color:#FF0000;" >Volver</button> </a>    </div>
  <?php
 
 include_once('header.php');

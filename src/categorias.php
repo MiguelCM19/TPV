@@ -19,10 +19,8 @@ $resultado = mysqli_query($conexion, $query ) or die
 
 
 
-
-
 ?>
-<div class="grid overflow-hidden justify-self-center bg-slate-500 grid-cols-5 grid-rows-2 gap-8">
+<div class="overflow-hidden justify-self-center bg-slate-500 grid grid-rows-2 grid-cols-2 xl:grid-cols-4 lg:grid-cols-4 md:grid-cols-4 sm:grid-cols-3 pt-10 pb-10  gap-8 ">
 <?php
     while($columna = mysqli_fetch_array($resultado)){
      
