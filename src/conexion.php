@@ -3,7 +3,7 @@
 
 
 $servername = "localhost";
-$database = "sexshop";
+$database = "sexshopM";
 $username = "root";
 $password = "";
 
